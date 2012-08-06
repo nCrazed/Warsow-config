@@ -1,0 +1,25 @@
+//based on GoReY's HUD
+
+if %INSTAGIB == 0
+if %WEAPON_ITEM
+	// weapon icons
+	setAlign #CENTER #MIDDLE
+	setCursor 0.5 * #WIDTH, 0.5 * #HEIGHT + 400
+	drawWeaponIcons 35 0 35 35
+
+	// strong ammo ammount
+	setCursor 0.5 * #WIDTH, -23 + 0.5 * #HEIGHT + 400
+	setAlign #CENTER #MIDDLE
+	drawWeaponStrongAmmo 35 0 10
+
+	// weak ammo ammount
+	setCursor 0.5 * #WIDTH, 23 + 0.5 * #HEIGHT + 400
+	setAlign #CENTER #MIDDLE
+	drawWeaponWeakAmmo 35 0 10
+
+endif
+endif
+
+
+
+

@@ -1,0 +1,60 @@
+// based on crizis3 HUD
+
+// weaponcolored crosshair-dot addon, instagun uses teamcolor
+if %TEAM != #TEAM_SPECTATOR						
+	if %HEALTH > 0    // dont show while freeflying
+		
+		setAlign #CENTER, #MIDDLE
+		setCursor #WIDTH / 2, #HEIGHT / 2
+		setSize 32,32
+		
+		// set dot color to weapons coloring
+		if %WEAPON_ITEM == #ITEM_GUNBLADE
+			setColor 0.8, 0.8, 0.8, 1
+		endif
+		if %WEAPON_ITEM == #ITEM_RIOTGUN
+			setColor 0.8, 0.5, 0, 1
+		endif
+		if %WEAPON_ITEM == #ITEM_GRENADE_LAUNCHER
+			setColor 0.1, 0.2, 1, 1
+		endif
+		if %WEAPON_ITEM == #ITEM_ROCKET_LAUNCHER
+			setColor 1, 0, 0, 1
+		endif
+		if %WEAPON_ITEM == #ITEM_PLASMAGUN
+			setColor 0, 1, 0, 1
+		endif
+		if %WEAPON_ITEM == #ITEM_LASERGUN
+			setColor 1, 0.9, 0.2, 1
+		endif
+		if %WEAPON_ITEM == #ITEM_ELECTROBOLT
+			setColor 0, 1, 1, 1
+		endif
+		if %WEAPON_ITEM == #ITEM_MACHINEGUN
+			setColor 0.8, 0.8, 0.8, 1
+		endif
+
+		// current weapon has some ammo
+		if %AMMO | %WEAK_AMMO > 0
+
+			// crosshair_strong
+			if %AMMO > 0
+				drawPicByName "gfx/hud/crosshair8"
+			endif
+
+			// crosshair
+			drawPicByName "gfx/hud/crosshair1"
+		endif
+
+		// current weapon has no ammo
+		if %AMMO == 0
+			if %WEAK_AMMO == 0
+				setColor 1,0,0,1
+				drawPicByName "gfx/hud/gr8/noammo"
+			endif
+		endif
+
+		
+			
+	endif
+endif

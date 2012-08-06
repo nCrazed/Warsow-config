@@ -1,0 +1,54 @@
+// based on crizis3 HUD
+
+if %HEALTH != #NOTSET
+
+	// black border
+	setAlign #LEFT, #TOP
+	setColor 0, 0, 0, 1
+	setCursor 0.5 * #WIDTH, 0.5 * #HEIGHT + 295
+	setSize 2 + 40 * 2, 16
+	drawPicByName gfx/ui/whites
+
+	// dark grey backdrop
+	setAlign #LEFT, #TOP
+	setColor 1,1,1,0.07
+	setCursor 0.5 * #WIDTH, 0.5 * #HEIGHT + 300
+	setSize 40 * 2, 11
+	drawPicByName gfx/ui/white
+
+	// light grey backdrop
+	setAlign #LEFT, #TOP
+	setColor 1,1,1,0.07
+	setCursor 0.5 * #WIDTH, 0.5 * #HEIGHT + 300
+	setSize 40, 11
+	drawPicByName gfx/ui/whites
+
+	// armor bar color
+
+	// green
+	setColor 0, 1, 0, 1
+
+	// yellow
+	if %ARMOR >= 100
+		setColor 1, 1, 0, 1
+	endif
+
+	// red
+	if %ARMOR >= 150
+		setColor 1, 0, 0, 1
+	endif
+
+	// armor bar
+	setAlign #LEFT, #TOP
+	setCursor 0.5 * #WIDTH, 0.5 * #HEIGHT + 300
+	setSize 40 * 2, 11
+	drawBar %ARMOR * 0.5, 100
+
+	// armor ammount
+	setFont "bitdust_16"
+	setAlign #LEFT, #TOP
+	setColor 1,1,1,1
+	setCursor +85 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 298
+	drawStringNum %ARMOR
+
+endif

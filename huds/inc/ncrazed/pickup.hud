@@ -1,0 +1,122 @@
+// based on crizis3 
+
+if %SHOW_PICKUP
+if %PICKUP_ITEM
+
+	setAlign #LEFT, #TOP
+	setCursor 10, 1 + 580
+	drawItemName %PICKUP_ITEM
+	
+	setAlign #RIGHT, #MIDDLE
+	setCursor -40 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 65
+	setSize 25, 25
+
+	// weapons
+	if %PICKUP_ITEM == #ITEM_MACHINEGUN
+		drawPicByName "gfx/hud/icons/weapon/machinegun"
+	endif
+	if %PICKUP_ITEM == #ITEM_RIOTGUN
+		drawPicByName "gfx/hud/icons/weapon/riot"
+	endif
+	if %PICKUP_ITEM == #ITEM_GRENADE_LAUNCHER
+		drawPicByName "gfx/hud/icons/weapon/grenade"
+	endif
+	if %PICKUP_ITEM == #ITEM_ROCKET_LAUNCHER
+		drawPicByName "gfx/hud/icons/weapon/rocket"
+	endif
+	if %PICKUP_ITEM == #ITEM_PLASMAGUN
+		drawPicByName "gfx/hud/icons/weapon/plasma"
+	endif
+	if %PICKUP_ITEM == #ITEM_LASERGUN
+		drawPicByName "gfx/hud/icons/weapon/laser"
+	endif
+	if %PICKUP_ITEM == #ITEM_ELECTROBOLT
+		drawPicByName "gfx/hud/icons/weapon/electro"
+	endif
+	
+	// ammo
+	if %PICKUP_ITEM == #ITEM_BULLETS
+		setAlign #LEFT, #MIDDLE
+		setCursor +40 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 65
+		drawPicByName "gfx/hud/icons/weapon/machinegun"
+	endif
+	if %PICKUP_ITEM == #ITEM_SHELLS
+		setAlign #LEFT, #MIDDLE
+		setCursor +40 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 65
+		drawPicByName "gfx/hud/icons/weapon/riot"
+	endif
+	if %PICKUP_ITEM == #ITEM_GRENADES
+		setAlign #LEFT, #MIDDLE
+		setCursor +40 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 65
+		drawPicByName "gfx/hud/icons/weapon/grenade"
+	endif
+	if %PICKUP_ITEM == #ITEM_ROCKETS
+		setAlign #LEFT, #MIDDLE
+		setCursor +40 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 65
+		drawPicByName "gfx/hud/icons/weapon/rocket"
+	endif
+	if %PICKUP_ITEM == #ITEM_PLASMA
+		setAlign #LEFT, #MIDDLE
+		setCursor +40 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 65
+		drawPicByName "gfx/hud/icons/weapon/plasma"
+	endif
+	if %PICKUP_ITEM == #ITEM_LASERS
+		setAlign #LEFT, #MIDDLE
+		setCursor +40 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 65
+		drawPicByName "gfx/hud/icons/weapon/laser"
+	endif
+	if %PICKUP_ITEM == #ITEM_BOLTS
+		setAlign #LEFT, #MIDDLE
+		setCursor +40 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 65
+		drawPicByName "gfx/hud/icons/weapon/electro"
+	endif	
+	
+	// armor
+	if %PICKUP_ITEM == #ITEM_ARMOR_SHARD
+		setAlign #LEFT, #MIDDLE
+		setCursor +40 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 65
+		drawPicByName "gfx/hud/icons/armor/shard"
+	endif	
+	if %PICKUP_ITEM == #ITEM_GREEN_ARMOR
+		setAlign #LEFT, #MIDDLE
+		setCursor +40 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 65
+		drawPicByName "gfx/hud/icons/armor/ga"			
+	endif
+	if %PICKUP_ITEM == #ITEM_YELLOW_ARMOR
+		setAlign #LEFT, #MIDDLE
+		setCursor +40 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 65
+		drawPicByName "gfx/hud/icons/armor/ya"
+	endif
+	if %PICKUP_ITEM == #ITEM_RED_ARMOR
+		setAlign #LEFT, #MIDDLE
+		setCursor +40 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 65
+		drawPicByName "gfx/hud/icons/armor/ra"
+	endif	
+	
+	// health
+	if %PICKUP_ITEM == #ITEM_5_HEALTH
+		drawPicByName "gfx/hud/icons/health/5"
+	endif
+	if %PICKUP_ITEM == #ITEM_25_HEALTH
+		drawPicByName "gfx/hud/icons/health/25"
+	endif	
+	if %PICKUP_ITEM == #ITEM_50_HEALTH
+		drawPicByName "gfx/hud/icons/health/50"
+	endif	
+	if %PICKUP_ITEM == #ITEM_MEGA_HEALTH
+		drawPicByName "gfx/hud/icons/health/100"
+	endif
+	if %PICKUP_ITEM == #ITEM_ULTRA_HEALTH
+		drawPicByName "gfx/hud/icons/health/100ultra"
+	endif
+	
+	// powerups
+	if %PICKUP_ITEM == #ITEM_QUAD_DAMAGE
+		drawPicByName "gfx/hud/icons/powerup/quad"
+	endif
+	if %PICKUP_ITEM == #ITEM_WARSHELL
+		drawPicByName "gfx/hud/icons/powerup/warshell"
+	endif		
+
+endif
+endif

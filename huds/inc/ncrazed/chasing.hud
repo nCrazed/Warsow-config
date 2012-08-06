@@ -1,0 +1,8 @@
+// based on crizis3 HUD
+if %CHASING != #NOTSET
+	setFont "hemihead_18"
+	setColor 1.0 1.0 1.0 0.8
+	setCursor 400 80
+	setAlign #CENTER, #TOP
+	drawPlayerName %CHASING
+endif 

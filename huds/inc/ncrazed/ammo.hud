@@ -1,0 +1,112 @@
+// based on crizis3 HUD
+
+if %HEALTH != #NOTSET
+
+	// black border
+	setAlign #LEFT, #TOP
+	setColor 0, 0, 0, 1
+	setCursor -84 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 255
+	setSize 6 + 40 * 4, 16
+	drawPicByName gfx/ui/whites
+
+	// dark grey backdrop
+	setAlign #LEFT, #TOP
+	setColor 1,1,1,0.07
+	setCursor -81 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 260
+	setSize 2 + 40 * 4, 11
+	drawPicByName gfx/ui/whites
+	
+	// weak ammo bar
+	setAlign #RIGHT, #TOP
+	setCursor -1 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 260
+	setSize 40 * 2, 11
+
+	// set bar value, max and color based on current weapon
+	if %WEAPON_ITEM == #WEAP_GUNBLADE
+		setColor 1, 1, 1, 1 // white
+		drawBar %WEAK_AMMO, 100`
+	endif
+	if %WEAPON_ITEM == #WEAP_MACHINEGUN
+		setColor 0.5, 0.5, 0.5, 1 // gray
+		drawBar %WEAK_AMMO, 100
+	endif
+	if %WEAPON_ITEM == #WEAP_RIOTGUN
+		setColor 1, 0.3, 0, 1 // orange
+		drawBar %WEAK_AMMO, 15
+	endif
+	if %WEAPON_ITEM == #WEAP_GRENADELAUNCHER
+		setColor 0, 0, 1, 1 // blue
+		drawBar %WEAK_AMMO, 15
+	endif
+	if %WEAPON_ITEM == #WEAP_ROCKETLAUNCHER
+		setColor 1, 0, 0, 1 // red
+		drawBar %WEAK_AMMO, 10
+	endif
+	if %WEAPON_ITEM == #WEAP_PLASMAGUN
+		setColor 0, 1, 0, 1 // green
+		drawBar %WEAK_AMMO, 125
+	endif
+	if %WEAPON_ITEM == #WEAP_LASERGUN
+		setColor 1, 1, 0, 1 // yellow
+		drawBar %WEAK_AMMO, 176
+	endif
+	if %WEAPON_ITEM == #WEAP_ELECTROBOLT
+		setColor 0, 1, 1, 1 // lightblue
+		drawBar %WEAK_AMMO, 10
+	endif
+
+	// strong armor bar
+	setAlign #LEFT, #TOP
+	setCursor 0.5 * #WIDTH, 0.5 * #HEIGHT + 260
+	setSize 40 * 2, 11
+
+
+	// set bar value, max and color based on current weapon
+	if %WEAPON_ITEM == #WEAP_GUNBLADE
+		setColor 1, 1, 1, 1 // white
+		drawBar %AMMO, 10
+	endif
+	if %WEAPON_ITEM == #WEAP_MACHINEGUN
+		setColor 0.5, 0.5, 0.5, 1 // gray
+		drawBar %AMMO, 0
+	endif
+	if %WEAPON_ITEM == #WEAP_RIOTGUN
+		setColor 1, 0.3, 0, 1 // orange
+		drawBar %AMMO, 10
+	endif
+	if %WEAPON_ITEM == #WEAP_GRENADELAUNCHER
+		setColor 0, 0, 1, 1 // blue
+		drawBar %AMMO, 10
+	endif
+	if %WEAPON_ITEM == #WEAP_ROCKETLAUNCHER
+		setColor 1, 0, 0, 1 // red
+		drawBar %AMMO, 10
+	endif
+	if %WEAPON_ITEM == #WEAP_PLASMAGUN
+		setColor 0, 1, 0, 1 // green
+		drawBar %AMMO, 70
+	endif
+	if %WEAPON_ITEM == #WEAP_LASERGUN
+		setColor 1, 1, 0, 1 // yellow
+		drawBar %AMMO, 100
+	endif
+	if %WEAPON_ITEM == #WEAP_ELECTROBOLT
+		setColor 0, 1, 1, 1 // lightblue
+		drawBar %AMMO, 5
+	endif
+
+	// waek ammo ammount
+	setFont "bitdust_16"
+	setAlign #RIGHT, #TOP
+	setColor 1,1,1,1
+	setCursor -85 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 258
+	drawStringNum %WEAK_AMMO
+
+	// strong ammo ammount
+	setFont "bitdust_16"
+	setAlign #LEFT, #TOP
+	setColor 1,1,1,1
+	setCursor +85 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 258
+	drawStringNum %AMMO
+
+endif

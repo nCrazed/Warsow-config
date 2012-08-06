@@ -1,0 +1,62 @@
+// based on crizis3 HUD
+
+if %HEALTH != #NOTSET
+
+	// black border
+	setAlign #RIGHT, #TOP
+	setColor 0, 0, 0, 1
+	setCursor 0.5 * #WIDTH, 0.5 * #HEIGHT + 295
+	setSize 4 + 40 * 2, 16
+	drawPicByName gfx/ui/whites
+
+	// dark grey backdrop
+	setAlign #RIGHT, #TOP
+	setColor 1,1,1,0.07
+	setCursor -1 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 300
+	setSize 40 * 2, 11
+	drawPicByName gfx/ui/white
+
+	// light grey backdrop
+	setAlign #RIGHT, #TOP
+	setColor 1,1,1,0.07
+	setCursor -1 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 300
+	setSize 40, 11
+	drawPicByName gfx/ui/whites
+
+	// health bar color
+	setColor 1, 0, 0, 1 // red
+
+	// orange
+	if %HEALTH > 50
+		setColor 1, 0.5, 0, 1 
+	endif
+
+	// yellow
+	if %HEALTH > 75
+		setColor 1, 1, 0, 1 
+	endif
+
+	// green
+	if %HEALTH == 100
+		setColor 0, 1, 0, 1 
+	endif
+
+	// magenta
+	if %HEALTH > 100
+		setColor 1, 0, 1, 1 
+	endif
+
+	// health bar
+	setAlign #RIGHT, #TOP
+	setCursor -1 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 300
+	setSize 40 * 2, 11
+	drawBar %HEALTH * 0.5, 100
+
+	// health ammount
+	setFont "bitdust_16"
+	setAlign #RIGHT, #TOP
+	setColor 1,1,1,1
+	setCursor -85 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 298
+	drawStringNum %HEALTH
+
+endif

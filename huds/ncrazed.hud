@@ -1,0 +1,15 @@
+// nCrazed's duel HUD
+
+include ncrazed/noweakcrosshair
+include ncrazed/clock
+include ncrazed/health
+include ncrazed/armor
+include ncrazed/noweakammo
+include ncrazed/pickup
+include ncrazed/speed
+include ncrazed/weaponlist
+include ncrazed/chasing
+include ncrazed/frags
+include ncrazed/pointing
+include ncrazed/obituaries
+

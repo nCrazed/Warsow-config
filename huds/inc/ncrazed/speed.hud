@@ -1,0 +1,21 @@
+// speed (with shadow)
+if %SHOW_SPEED
+if %WEAPON_ITEM
+
+	setFont "virtue_16"
+	setColor 0 0 0 1
+	setAlign #CENTER, #TOP
+	setCursor 0.5 * #WIDTH, 1 + 0.5 * #HEIGHT + 110
+	drawStringNum %SPEED
+
+	setColor 0.5,1,0.5,1
+	if %SPEED < 470
+		setColor 1,0.5,0.5,1
+	endif
+
+	setAlign #CENTER, #TOP
+	setCursor -1 + 0.5 * #WIDTH, 0.5 * #HEIGHT + 110
+	drawStringNum %SPEED
+
+endif
+endif
