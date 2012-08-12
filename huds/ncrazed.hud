@@ -1,5 +1,7 @@
 // nCrazed's duel HUD
 
+include ncrazed/team_info
+include ncrazed/minimap
 include ncrazed/noweakcrosshair
 include ncrazed/clock
 include ncrazed/health
@@ -10,6 +12,6 @@ include ncrazed/speed
 include ncrazed/weaponlist
 include ncrazed/chasing
 include ncrazed/frags
-include ncrazed/pointing
 include ncrazed/obituaries
+
 
